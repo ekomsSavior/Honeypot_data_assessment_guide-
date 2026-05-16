@@ -2,7 +2,7 @@
 
 ### For security professionals who caught malware and want to analyze it 
 
-brought to you by: ** CHURCHOFMALWARE.org **
+brought to you by: CHURCHOFMALWARE.org
 ---
 
 1. Locate the Downloads on Your Cowrie Server
