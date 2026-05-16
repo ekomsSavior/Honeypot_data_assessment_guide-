@@ -63,11 +63,17 @@ file * | tee ../file_types.txt
 Look for:
 
 Output Type
+
 ELF 32/64-bit LSB executable Compiled binary (often IoT botnet)
+
 Bourne-Again shell script Plaintext bash downloader
+
 Perl script Plaintext Perl bot
+
 Python script Plaintext Python bot (Discord, etc.)
+
 gzip compressed data Often a coinminer or packed ELF
+
 ASCII text Configuration, logs, or exploit output
 
 3.2 Extract Strings (Always Do This)
