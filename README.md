@@ -29,16 +29,7 @@ ls -lat /opt/cowrie/var/lib/cowrie/downloads/ | head -20
 
 2. Copy Files to Your Analysis Machine
 
-Use scp, rsync, or a shared volume.
-
-```bash
-# From Cowrie host to analysis VM
-scp -r /opt/cowrie/var/lib/cowrie/downloads/ user@analysis-vm:~/honeypot_samples/
-
-# Or rsync for resume capability
-rsync -avz /opt/cowrie/var/lib/cowrie/downloads/ user@analysis-vm:~/honeypot_samples/
-```
-Or If you just need to grab samples fast, spin up an HTTP server on the Cowrie host:
+If you just need to grab samples fast, spin up an HTTP server on the Cowrie host:
 
 ```bash
 # On Cowrie host (in the downloads directory)
@@ -50,6 +41,15 @@ Then on your analysis VM:
 
 ```bash
 wget -r -np -nH --cut-dirs=3 -R "index.html*" http://<COWRIE_IP>:8080/
+```
+or for a better more secure workflow Use scp, rsync, or a shared volume.
+
+```bash
+# From Cowrie host to analysis VM
+scp -r /opt/cowrie/var/lib/cowrie/downloads/ user@analysis-vm:~/honeypot_samples/
+
+# Or rsync for resume capability
+rsync -avz /opt/cowrie/var/lib/cowrie/downloads/ user@analysis-vm:~/honeypot_samples/
 ```
 
 Pro tip: Keep a local copy of the Cowrie logs as well (.json files). They contain the commands attackers executed, which often reveal the download URLs and post‑exploitation actions.
